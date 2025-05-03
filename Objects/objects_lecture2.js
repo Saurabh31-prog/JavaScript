@@ -36,7 +36,6 @@ console.log(obj3); //{ '1': 'a', '2': 'b', '3': 'c', '4': 'd' }
 const obj4 = { ...obj1, ...obj2};
 console.log(obj4);
 
-
 //converting all object keys to string format
 //creates an array of string of all the keys and values present inside the objects
 const tinderuser = {
