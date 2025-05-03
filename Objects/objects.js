@@ -31,9 +31,10 @@ console.log(jsuser.name); // Saurabh Mungle
 jsuser.greeting = function() {
     console.log("hello jsuser");
 }
-console.log(jsuser.greeting());
 
-jsuser.greeting = function() {
+jsuser.greeting1 = function() {
     console.log(`hello ${this.name}`);
     console.log(`hello ${this["full name"]}`);
 }
+console.log(jsuser.greeting1());
+console.log(jsuser.greeting());
