@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events projects </title>
+</head>
+<body>
+    <h1> Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop"> Stop </button>
+
+
+</body>
+<script>
+
+//code for setInterval and clearInterval with start and stop button 
+    let intervalId;
+
+    document.getElementById("start").addEventListener("click", function () {
+            if (!intervalId) {  // Prevents multiple intervals from starting
+                intervalId = setInterval(function () {
+                    console.log("Saurabh", Date.now());
+                }, 1000);
+            }
+        });
+
+        document.getElementById("stop").addEventListener("click", function () {
+            if (intervalId) {  // Stops interval if running
+                clearInterval(intervalId);
+                intervalId = null;  // Reset variable
+            }
+        });
+    </script>
+
+</html>
+
