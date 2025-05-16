@@ -1,0 +1,85 @@
+<!-- Getting data from github user's API and display it on card (IMPORTANT CODE) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card{
+            display: none;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            margin: auto;
+        }
+        img {
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #f39c12;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body style="background-color:#212121; color: white ">
+    <button onclick="fetchUserData()">show github profile</button>
+    <div class="card" id="userCard">
+        <div>
+            <img id="avatar" src="" alt="user avatar">
+            </div>
+            <div>
+                <h1 id="followers">
+                    followers: 
+                </h1>
+            </div>
+    </div>    
+</body>
+<script>
+    /*
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function ()
+    {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText);
+            console.log(data.avatar_url)
+            console.log(data.followers);
+        }
+    }
+
+    xhr.send()
+    */
+
+    function fetchUserData(){
+        const requestUrl = 'https://api.github.com/users/Saurabh31-prog';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4 && xhr.status === 200){
+                const data = JSON.parse(this.responseText);
+                document.getElementById("avatar").src = data.avatar_url;
+                document.getElementById("followers").textContent = "Followers: " + data.followers;
+                document.getElementById("userCard").style.display = "block";
+            }
+        };
+        xhr.send();
+    }
+
+</script>
+</html>
