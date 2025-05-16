@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body>
+    <div>
+            <h1> Events in Javascript</h1>
+            <button id="stop">stop </button>
+            <h1> saurabh</h1>
+   </div>
+
+</body>
+<script>
+    
+    const saymyname = function(){
+        console.log
+        ('saurabh');
+    }
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "best js series";
+    }
+    const changeme  = setTimeout(changeText, 2000);
+    //changes the text of h1 within 2 seconds 
+
+
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeme)
+        console.log('stoped');
+    }) //stops changing the h1 text if button pressed before 2seconds 
+
+    document.querySelector('#stop').addEventListener('click', function(e){
+        console.log('button pressed');
+    })
+
+</script>
+</html>
+
