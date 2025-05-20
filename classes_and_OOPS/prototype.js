@@ -93,6 +93,30 @@ Array.prototype.firstAndLast = function() {
 let fruits = ['apple', 'banana','orange', 'kiwi'];
 fruits.firstAndLast();  //first: apple, last: kiwi
 
+//3.  Inheritance : animal -> dog
+function Animal(name)
+ {
+    this.name = name;
+ }
+
+ Animal.prototype.speak = function() {
+    console.log(`${this.name} makes a sound`)
+ }
+ function Dog(name)
+ {
+    Animal.call(this, name) //inherit properties
+ }
+
+ Dog.prototype = Object.create(Animal.prototype); //inherit methods
+ Dog.prototype.constructor = Dog; //fix constructor reference
+
+ Dog.prototype.bark = function() {
+    console.log(`${this.name} barks`);
+    
+ }
+ const dog1 = new Dog("tommmy");
+ dog1.speak();
+ dog1.bark();
 
 
 // ====================================================================
@@ -154,3 +178,35 @@ anotherUserName.trueLength(); // Output: True length is: 11
 // 5. Be careful when modifying global prototypes like String, Array, Object in real-world apps
 
 // ====================================================================
+
+
+//more practice
+
+const grandParent = {
+    surname: "sharma"
+}
+
+const parent = {
+    __proto__: grandParent,
+    eyecolor: "brown"
+}
+
+const child = {
+    __proto__: parent,
+    name: "karan"
+}
+
+console.log(child.eyecolor + child.surname); //brownsharma
+
+
+//3 
+Object.prototype.sayHello = function () {
+    console.log(`Hello ${this.name} from every object!`);
+};
+
+const student = { name: "Aman" };
+const teache9r = { subject: "Maths" };
+
+student.sayHello(); // Works
+teacher.sayHello(); // Works
+
