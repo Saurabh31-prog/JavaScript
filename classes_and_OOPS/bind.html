@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>react</title>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+<script>
+    // 📘 NOTES: JavaScript Class + DOM Event Handling with `this`
+
+class React {
+    constructor() {
+        // 🧠 Instance properties
+        this.library = "react";
+        this.server = "https://localhost:3000";
+
+        // ✅ Add event listener on page load
+        // ❗️Using `.bind(this)` is important to retain the correct context of `this`
+        document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this));
+            // Alternative: () => this.handleClick()  <-- arrow functions preserve context
+    }
+
+    handleClick() {
+        console.log("button clicked");   // ✔️ Logs message on click
+        console.log(this);               // ✔️ Logs the class instance (React object)
+    }
+}
+
+const app = new React(); // 🏁 Object is created when page loads
+
+</script>
+</html>
