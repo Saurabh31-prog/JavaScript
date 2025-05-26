@@ -1,4 +1,20 @@
 //array
+
+/*
+
+🔄 Modification (Mutating)
+push() – Add item(s) to the end.
+
+pop() – Remove last item.
+
+unshift() – Add item(s) to the beginning.
+
+shift() – Remove first item.
+
+splice() – Add/remove item(s) at a specific index.
+
+fill() – Fill all/part of an array with a static value.
+*/
 const myArr = [0, 1, 2, 3, 4, 5];
 const stringArr =[ 'hello', 'world'];
 const myArr2 = new Array(1, 2, 3, 4, 5);
@@ -90,15 +106,3 @@ console.log(array1.fill(6));
 // The fill() method can also be used to fill an array with a reference to an object
 
 
-// 🔄 Modification (Mutating)
-// push() – Add item(s) to the end.
-
-// pop() – Remove last item.
-
-// unshift() – Add item(s) to the beginning.
-
-// shift() – Remove first item.
-
-// splice() – Add/remove item(s) at a specific index.
-
-// fill() – Fill all/part of an array with a static value.
