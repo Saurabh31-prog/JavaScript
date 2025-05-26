@@ -1,3 +1,14 @@
+/*
+ Non-Mutating Copy/Subset
+slice() – Return a shallow copy of a portion of an array.
+
+concat() – Merge arrays into a new one.
+
+flat() – Flatten nested arrays into a single-level array.
+
+flatMap() – Map + flatten in one step.
+*/
+
 const heros = [ "thor", "iroman", "spiderman"];
 
 const dcHeros = ["batman", "superman", "wonderwoman"];
@@ -8,12 +19,13 @@ const dcHeros = ["batman", "superman", "wonderwoman"];
 
 // Spread operator
 const allheros = [...heros, ...dcHeros];
-console.log(allheros);
+console.log( 'using spread operator : to merge 2 arrays ' , allheros);
 
 // flat method
 //defination: The flat() method creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
 const anotherArr = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]];
-const realarr = anotherArr.flat(3);
+const realarr = anotherArr.flat(1);
+
 console.log(realarr);
 
 //from method
